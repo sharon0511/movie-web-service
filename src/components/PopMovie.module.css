@@ -16,9 +16,22 @@ a {
   color: white;
 }
 
+.img {
+  object-fit: cover;
+  width: 180px;
+  height: 180px;
+  float: left;
+}
+
+.title {
+  display: inline-block;
+  margin: 3% 0 1% 2%;
+}
+
 .year {
-  /* display: inline-block; */
+  display: inline-block;
   color: white;
+  margin-left: 2%;
 }
 
 .genre {
@@ -29,8 +42,8 @@ a {
   padding: 5px;
   font-size: small;
   position: relative;
-  top: -320px;
-  left: -223px;
+  top: 89px;
+  left: -36px;
 }
 
 .rate {
@@ -40,12 +53,14 @@ a {
   padding: 5px;
   font-size: small;
   position: relative;
-  top: -77px;
-  left: 181px;
+  top: 90px;
+  left: -30px;
   color: white;
   width: 39px;
 }
 
 .container {
-  display: inline-block;
+  background-color: rgb(23, 23, 32);
+  margin-bottom: 10%;
+  overflow: hidden;
 }

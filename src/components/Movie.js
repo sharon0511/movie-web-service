@@ -4,15 +4,15 @@ import styles from "./Movie.module.css"
 
 function Movie({ id, coverImg, title, summary, genres, rate, year }) {
   return (
-    <div>
+    <div className={styles.container}>
       <img src={coverImg} alt={title} />
       <div className={styles.genre}>{genres[0]}</div>
       <div>
         <p>
-          <Link to={`/movie/${id}`}>{title.length < 28 ? title : `${title.slice(0, 28)}...`}</Link>
+          <Link to={`/movie/${id}`}>{title.length < 25 ? title : `${title.slice(0, 25)}...`}</Link>
         </p>
       </div>
-      <div>
+      <div className={styles.year}>
         <p>{year}</p>
       </div>
 
