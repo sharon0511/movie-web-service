@@ -7,7 +7,8 @@ import Home from "./routes/Home";
 import Group from "./routes/Group";
 import Detail from "./routes/Detail";
 import Navbar from "./components/Navbar";
-import styles from "./components/App.module.css"
+import Search from "./components/Search"
+import styles from "./components/cssModule/App.module.css"
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path={`/`} element={<Home />} />
           <Route path={`/page/:group/:page`} element={<Group />} />
           <Route path={`/movie/:id`} element={<Detail />} />
+          <Route path={`/search/:search`} element={<Search />} />
         </Routes>
       </div>
     </Router>

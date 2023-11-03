@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import styles from "../components/Group.module.css"
+import styles from "../components/cssModule/Group.module.css"
 import Load from "../components/Load.js"
 import MoviesGroup from "../components/MoviesGroup.js"
 

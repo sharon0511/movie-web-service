@@ -55,7 +55,8 @@ a {
 }
 
 .groupLinks,
-.link a {
+.link,
+.christmas a {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -63,9 +64,36 @@ a {
   color: white;
 }
 
-.link:hover a:hover {
+.link:hover {
   transform: scale(1.1);
+}
+
+.link a:hover {
   color: orange;
+}
+
+.christmas a {
+  transform: translateY(-3px);
+}
+
+.christmas a:visited {
+  color: green;
+  text-decoration: none;
+}
+
+.christmas a:hover span:first-child,
+.christmas a:hover span:nth-child(3),
+.christmas a:hover span:nth-child(5),
+.christmas a:hover span:nth-child(7),
+.christmas a:hover span:nth-child(9) {
+  color: green;
+}
+
+.christmas a:hover span:nth-child(2),
+.christmas a:hover span:nth-child(4),
+.christmas a:hover span:nth-child(6),
+.christmas a:hover span:nth-child(8) {
+  color: red;
 }
 
 /* Search Bar moves to center */

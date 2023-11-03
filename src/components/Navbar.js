@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css"
+import styles from "./cssModule/Navbar.module.css"
 import { Group_obj, Group_key_arr } from "../atom/NavList";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -32,6 +32,25 @@ function Navbar() {
             )
           })
         }
+        {/* Christmas!🎄 */}
+        <div className={styles.link}>
+          <div className={styles.link_sep}>
+            <div className={styles.christmas}>
+              <Link to={`/search/christmas`}>
+                <span>C</span>
+                <span>h</span>
+                <span>r</span>
+                <span>i</span>
+                <span>s</span>
+                <span>t</span>
+                <span>m</span>
+                <span>a</span>
+                <span>s</span>
+                🎄
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Search */}

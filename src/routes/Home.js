@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Load from "../components/Load";
 import Movie from "../components/Movie";
 import PopMovie from "../components/PopMovie";
-import styles from "../components/Home.module.css"
+import styles from "../components/cssModule/Home.module.css"
 import YouTube from 'react-youtube';
 
 function Home() {
