@@ -1,21 +1,22 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./Movie.module.css"
-
+import defaultImg from "../img/default_Img.jpeg";
 function Movie({ id, coverImg, title, summary, genres, rate, year }) {
+  const onErrorImg = (event) => {
+    event.target.src = defaultImg;
+  }
+
   return (
     <div className={styles.container}>
-      <img src={coverImg} alt={title} />
+      <Link to={`/movie/${id}`}><img src={coverImg} alt="" onError={onErrorImg} /></Link>
       <div className={styles.genre}>{genres[0]}</div>
       <div>
-        <p>
-          <Link to={`/movie/${id}`}>{title.length < 25 ? title : `${title.slice(0, 25)}...`}</Link>
-        </p>
+        <Link to={`/movie/${id}`}>{title.length < 25 ? title : `${title.slice(0, 25)}...`}</Link>
       </div>
       <div className={styles.year}>
-        <p>{year}</p>
+        <Link to={`/movie/${id}`}><p>{year}</p></Link>
       </div>
-
       {/* <p>{summary}</p>
       <ul>
         {genres.map((genre) => (
@@ -25,7 +26,8 @@ function Movie({ id, coverImg, title, summary, genres, rate, year }) {
         ))}
       </ul> */}
       <div className={styles.rate}>⭐{Number.isInteger(rate) ? `${rate}.0` : rate}</div>
-    </div >
+    </div>
+
   );
 }
 

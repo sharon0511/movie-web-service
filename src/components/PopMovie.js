@@ -1,21 +1,27 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./PopMovie.module.css"
-
+import defaultImg from "../img/default_Img.jpeg";
 function PopMovie({ id, coverImg, title, summary, genres, rate, year }) {
+  const onErrorImg = (event) => {
+    event.target.src = defaultImg;
+  }
+
   return (
-    <div className={styles.container}>
-      <img src={coverImg} alt={title} className={styles.img} />
-      <div className={styles.title}>
-        <Link to={`/movie/${id}`}>{title}</Link>
+    <Link to={`/movie/${id}`}>
+      <div className={styles.container}>
+        <img src={coverImg} alt="" className={styles.img} onError={onErrorImg} />
+        <div className={styles.title}>
+          {title}
+        </div>
+        <br />
+        <div className={styles.year}>
+          <p>{year}</p>
+        </div>
+        <div className={styles.genre}>{genres[0]}</div>
+        <div className={styles.rate}>⭐{Number.isInteger(rate) ? `${rate}.0` : rate}</div>
       </div>
-      <br />
-      <div className={styles.year}>
-        <p>{year}</p>
-      </div>
-      <div className={styles.genre}>{genres[0]}</div>
-      <div className={styles.rate}>⭐{Number.isInteger(rate) ? `${rate}.0` : rate}</div>
-    </div >
+    </Link>
   );
 }
 

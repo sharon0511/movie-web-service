@@ -30,3 +30,18 @@ h1 {
   font-family: KBO-Dia-Gothic_bold;
   color: white;
 }
+
+.youtube {
+  position: relative;
+  padding-left: 11%;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 30px 5%;
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+}

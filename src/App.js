@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className={styles.container}>
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<Detail />} />

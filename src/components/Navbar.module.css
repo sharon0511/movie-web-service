@@ -41,6 +41,10 @@ a {
   color: orange;
 }
 
+.pageName:hover {
+  transform: scale(1.1);
+}
+
 .groupLinks a {
   font-family: KBO-Dia-Gothic_bold;
   margin: 17px 20px;
@@ -57,6 +61,11 @@ a {
   align-content: center;
   /* text-shadow: 3px 3px #c7cdd4; */
   color: white;
+}
+
+.link:hover a:hover {
+  transform: scale(1.1);
+  color: orange;
 }
 
 /* Search Bar moves to center */

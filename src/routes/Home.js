@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import Load from "../components/Load";
 import Movie from "../components/Movie";
 import PopMovie from "../components/PopMovie";
 import styles from "../components/Home.module.css"
+import YouTube from 'react-youtube';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -37,8 +39,26 @@ function Home() {
 
   return (
     <div>
-      {loading ? <h1>Loading</h1> : (
-        <div>
+      {loading ? <Load /> : (
+        <div className={styles.container}>
+          {/* Trailer Player */}
+          <div className={styles.youtube}>
+            <YouTube
+              videoId={popMovies[0].yt_trailer_code === "" ? popMovies[1].yt_trailer_code : popMovies[0].yt_trailer_code}
+              opts={{
+                width: "80%",
+                height: "1000",
+                playerVars: {
+                  autoplay: 1,
+                  rel: 0,
+                  modestbranding: 1,
+                },
+              }}
+
+              onEnd={(e) => { e.target.stopVideo(0); }}
+            />
+          </div>
+
           {/* New Movies */}
           <div className={styles.left}>
             <h1>New Movies</h1>
@@ -60,7 +80,7 @@ function Home() {
 
           {/* Popular */}
           <div className={styles.right}>
-            <h1>Popular Movies</h1>
+            <h1>High Rating</h1>
             {popMovies.map((popMovie) => (
               <PopMovie
                 key={popMovie.id}

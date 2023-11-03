@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "3YangPyeongB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/3YangPyeongB.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.background {
+  z-index: -1;
+}
+
+.background img {
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+}
+
+.show {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 2;
+
+  width: 50%;
+  /* border: 2px solid snow; */
+  border-radius: 10px;
+}
+
+.shortView {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 10px;
+}
+
+.shortViewImg {
+  float: left;
+  width: 500px;
+  height: 750px;
+  margin-right: 10%;
+}
+
+.shortViewLetters {
+  font-family: 3YangPyeongB;
+  width: 70%;
+  margin: 20px 0 0 30px;
+  color: white;
+}
+
+.smallTitle {
+  font-family: NanumSquareNeo-Variable;
+  background-color: orange;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.smallTitle:nth-child(3) {
+  margin-left: 3%;
+}
+
+.star {
+  display: inline-block;
+}
