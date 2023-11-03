@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import styles from "./Movie.module.css"
+import styles from "./MoviesGroup.module.css"
 import defaultImg from "../img/default_Img.jpeg";
-function Movie({ id, coverImg, title, summary, genres, rate, year }) {
+
+function MoviesGroup({ id, coverImg, title, summary, genres, rate, year }) {
   const onErrorImg = (event) => {
     event.target.src = defaultImg;
   }
@@ -10,7 +11,7 @@ function Movie({ id, coverImg, title, summary, genres, rate, year }) {
   return (
     <div className={styles.container}>
       <Link to={`/movie/${id}`}><figure><img src={coverImg} alt="" onError={onErrorImg} /></figure></Link>
-      <div className={styles.genre}>{genres[0]}</div>
+      {/* <div className={styles.genre}>{genres[0]}</div> */}
       <br />
       <Link to={`/movie/${id}`}>{title.length < 25 ? title : `${title.slice(0, 25)}...`}</Link>
       <br />
@@ -25,13 +26,13 @@ function Movie({ id, coverImg, title, summary, genres, rate, year }) {
           </li>
         ))}
       </ul> */}
-      <div className={styles.rate}>⭐{Number.isInteger(rate) ? `${rate}.0` : rate}</div>
+      {/* <div className={styles.rate}>⭐{Number.isInteger(rate) ? `${rate}.0` : rate}</div> */}
     </div>
 
   );
 }
 
-Movie.propTypes = {
+MoviesGroup.propTypes = {
   id: PropTypes.number.isRequired,
   coverImg: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
@@ -39,4 +40,4 @@ Movie.propTypes = {
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
-export default Movie;
+export default MoviesGroup;

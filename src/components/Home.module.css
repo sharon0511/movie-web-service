@@ -45,3 +45,7 @@ h1 {
   position: relative;
   min-height: 100vh;
 }
+
+.newMovies {
+  margin-left: 83px;
+}

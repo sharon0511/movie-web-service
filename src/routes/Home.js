@@ -25,7 +25,7 @@ function Home() {
         `https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year`
       )
     ).json();
-    setPopMovies(json.data.movies);
+    setPopMovies(json.data.movies.slice(0, 8));
     setLoading(false);
   }
 
@@ -61,7 +61,7 @@ function Home() {
 
           {/* New Movies */}
           <div className={styles.left}>
-            <h1>New Movies</h1>
+            <h1 className={styles.newMovies}>New Movies</h1>
             <div className={styles.gridContainer}>
               {movies.map((movie) => (
                 <Movie
