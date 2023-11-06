@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  background-color: black;
+  /* background-color: black; */
   overflow: hidden;
   position: relative;
   min-height: 100vh;

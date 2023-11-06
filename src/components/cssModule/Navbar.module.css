@@ -14,7 +14,7 @@
 .container {
   position: relative;
   /* width: 100%; */
-  height: 70px;
+  height: 60px;
   padding: 0px 30px;
   display: flex;
   flex-direction: row;
@@ -74,11 +74,6 @@ a {
 
 .christmas a {
   transform: translateY(-3px);
-}
-
-.christmas a:visited {
-  color: green;
-  text-decoration: none;
 }
 
 .christmas a:hover span:first-child,

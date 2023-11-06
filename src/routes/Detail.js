@@ -46,7 +46,7 @@ function Detail() {
             {/* ShortView (Img, Title, rating, runtime...) */}
             <div className={styles.shortView}>
               {/* Img */}
-              <img src={movie.large_cover_image} className={styles.shortViewImg}></img>
+              <img src={movie.large_cover_image} className={styles.shortViewImg} onError={onErrorImg}></img>
               {/* title, rating, runtime, genre */}
               <div className={styles.shortViewLetters}>
                 <h1>{movie.title}</h1>

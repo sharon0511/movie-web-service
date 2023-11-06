@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./cssModule/Search.module.css";
 import Load from "./Load"
-import MoviesGroup from "./MoviesGroup"
+import MovieSearch from "./MovieSearch"
 
 function Search() {
   const { search } = useParams();
@@ -31,9 +31,9 @@ function Search() {
     } else {
       setMovArr(
         (
-          [movArr, ...[movies.filter((movies) => (movies.summary.toLowerCase().indexOf(search.toLowerCase()) !== -1
-            || movies.description_full.toLowerCase().indexOf(search.toLowerCase()) !== -1
-            || movies.title.toLowerCase().indexOf(search.toLowerCase()) !== -1))]
+          [movArr, ...[movies.filter((movie) => (movie.summary.toLowerCase().indexOf(search.toLowerCase()) !== -1
+            || movie.description_full.toLowerCase().indexOf(search.toLowerCase()) !== -1
+            || movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1))]
           ]
         )
           .flat()
@@ -55,20 +55,26 @@ function Search() {
 
   return (
     <div className={(search.toLowerCase() === "christmas") ? styles.christmasContainer : styles.container}>
-      {loading ? <Load /> : <div className={styles.gridContainer}>
-        {movies.map((movies) => (
-          <MoviesGroup
-            key={movies.id}
-            id={movies.id}
-            coverImg={movies.medium_cover_image}
-            title={movies.title}
-            summary={movies.summary}
-            genres={movies.genres}
-            rate={movies.rating}
-            year={movies.year}
-          />
-        ))}
-      </div>}
+      {
+        (loading) ? <Load /> :
+          <div className={styles.movies}>
+            {
+              movArr.map((movie) => (
+                <MovieSearch
+                  key={movie.id}
+                  id={movie.id}
+                  title={movie.title}
+                  coverImg={movie.medium_cover_image}
+                  rating={movie.rating}
+                  runtime={movie.runtime}
+                  summary={movie.summary}
+                  year={movie.year}
+                  santa={search}
+                />
+              ))
+            }
+          </div>
+      }
     </div>
   )
 }

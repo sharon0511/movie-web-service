@@ -16,7 +16,7 @@ function Navbar() {
 
       {/* Page Name */}
       <div className={styles.pageName}>
-        <Link to={"/"}>Movies</Link>
+        <Link to={"/"}>FlickFacts</Link>
       </div>
 
       {/* Group Links */}
