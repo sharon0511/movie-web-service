@@ -38,9 +38,9 @@ function Home() {
   console.log(popMovies)
 
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? <Load /> : (
-        <div className={styles.container}>
+        <div>
           {/* Trailer Player */}
           <div className={styles.youtube}>
             <YouTube
