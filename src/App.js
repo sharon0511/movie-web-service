@@ -12,7 +12,7 @@ import styles from "./components/cssModule/App.module.css"
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navbar />
       <div className={styles.container}>
         <Routes>
