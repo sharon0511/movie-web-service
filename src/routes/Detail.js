@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Load from "../components/Load";
-import Movie from "../components/Movie";
 import styles from "../components/cssModule/Detail.module.css";
 import defaultBackImg from "../img/default_back.jpeg";
 import defaultImg from "../img/default_Img.jpeg";

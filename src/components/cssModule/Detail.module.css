@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "3YangPyeongB";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/3YangPyeongB.woff")
-    format("woff");
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "NanumSquareNeo-Variable";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
-    format("woff2");
-  font-weight: normal;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .shortViewLetters {
-  font-family: 3YangPyeongB;
+  font-family: Pretendard-Regular;
   width: 70%;
   margin: 20px 0 0 30px;
   color: white;
@@ -65,8 +65,4 @@
 
 .smallTitle:nth-child(3) {
   margin-left: 3%;
-}
-
-.star {
-  display: inline-block;
 }

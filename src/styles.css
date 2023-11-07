@@ -2,3 +2,9 @@ body {
   height: 100vh;
   background-color: black;
 }
+
+h1,
+h2 {
+  font-family: KBO-Dia-Gothic_bold;
+  color: white;
+}

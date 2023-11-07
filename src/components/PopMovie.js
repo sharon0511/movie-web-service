@@ -11,15 +11,22 @@ function PopMovie({ id, coverImg, title, summary, genres, rate, year }) {
     <Link to={`/movie/${id}`}>
       <div className={styles.container}>
         <img src={coverImg} alt="" className={styles.img} onError={onErrorImg} />
-        <div className={styles.title}>
+        {/* <div className={styles.title}>
           {title}
         </div>
         <br />
         <div className={styles.year}>
           <p>{year}</p>
+        </div> */}
+        <div className={styles.info}>
+          {title}
+          <br />
+          {year}
         </div>
-        <div className={styles.genre}>{genres[0]}</div>
-        <div className={styles.rate}>⭐{Number.isInteger(rate) ? `${rate}.0` : rate}</div>
+        <div className={styles.info2}>
+          <div className={styles.genre}>{genres[0]}</div>
+          <div className={styles.rate}>⭐{Number.isInteger(rate) ? `${rate}.0` : rate}</div>
+        </div>
       </div>
     </Link>
   );

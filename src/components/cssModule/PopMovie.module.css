@@ -6,6 +6,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 p {
   /* display: inline-block; */
   margin-block-start: 0px;
@@ -23,15 +31,16 @@ a {
   float: left;
 }
 
-.title {
+.info {
+  font-family: Pretendard-Regular;
   display: inline-block;
   margin: 3% 0 1% 2%;
 }
 
-.year {
-  display: inline-block;
-  color: white;
-  margin-left: 2%;
+.info2 {
+  position: relative;
+  top: -13px;
+  left: 46px;
 }
 
 .genre {

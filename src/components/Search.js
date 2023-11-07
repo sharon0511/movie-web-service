@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./cssModule/Search.module.css";
 import Load from "./Load"
-import MovieSearch from "./MovieSearch"
+import MoviesGroup from "./MoviesGroup";
 
 function Search() {
   const { search } = useParams();
@@ -10,30 +10,40 @@ function Search() {
   const [movies, setMovies] = useState([]);
   const [movArr, setMovArr] = useState([]);
 
-  const getMovies = async () => {
+  const getMovies = () => {
     for (let i = 1; i <= 100; i++) {
-      const json = await (
-        await fetch(`https://yts.mx/api/v2/list_movies.json?page=${i}&sort_by=rating`)
-      ).json();
-      setMovies(json.data.movies);
+      setLoading(true);
+      setMovies([]);
+      fetch(`https://yts.mx/api/v2/list_movies.json?page=${i}&sort_by=rating`)
+        .then((res) => res.json())
+        .then((json) => setMovies(json.data.movies))
     }
     setLoading(false);
   }
 
+  const load = () => {
+    <Load />
+  }
+
   useEffect(() => {
+    setLoading(true);
+    setMovArr([]);
     getMovies();
+
+    return;
   }, [search])
 
   {/* Search Function */ }
   useEffect(() => {
     if (movies.length === 0) {
-      return <Load />;
+      load();
     } else {
       setMovArr(
         (
-          [movArr, ...[movies.filter((movie) => (movie.summary.toLowerCase().indexOf(search.toLowerCase()) !== -1
-            || movie.description_full.toLowerCase().indexOf(search.toLowerCase()) !== -1
-            || movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1))]
+          [movArr,
+            ...[movies.filter((movie) => (movie.summary.toLowerCase().indexOf(search.toLowerCase()) !== -1
+              || movie.description_full.toLowerCase().indexOf(search.toLowerCase()) !== -1
+              || movie.title.toLowerCase().indexOf(search.toLowerCase()) !== -1))]
           ]
         )
           .flat()
@@ -43,7 +53,7 @@ function Search() {
                 console.log(i, j);
                 console.log(movie.id, arr[j].id);
                 arr.splice(j, 1);
-                j -= -1;
+                j -= 1;
               }
             }
             return movie;
@@ -57,10 +67,10 @@ function Search() {
     <div className={(search.toLowerCase() === "christmas") ? styles.christmasContainer : styles.container}>
       {
         (loading) ? <Load /> :
-          <div className={styles.movies}>
+          <div className={styles.gridContainer}>
             {
               movArr.map((movie) => (
-                <MovieSearch
+                <MoviesGroup
                   key={movie.id}
                   id={movie.id}
                   title={movie.title}

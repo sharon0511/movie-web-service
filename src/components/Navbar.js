@@ -59,9 +59,11 @@ function Navbar() {
           <form>
             {/* Search Movie */}
             <input type="text" placeholder="Search Movie!" value={search} onChange={changeValue}></input>
-            <button>
-              <FontAwesomeIcon icon={faSearch} size="lg" color="white" />
-            </button>
+            <Link to={`/search/${search}`}>
+              <button>
+                <FontAwesomeIcon icon={faSearch} size="lg" color="white" />
+              </button>
+            </Link>
           </form>
         </div>
       </div>

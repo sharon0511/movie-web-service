@@ -15,9 +15,11 @@ a {
   color: white;
 }
 
-.year {
+.info {
   display: inline-block;
   color: white;
+  margin-top: -15px;
+  font-family: Pretendard-Regular;
 }
 
 .genre {
