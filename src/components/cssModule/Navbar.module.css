@@ -1,7 +1,6 @@
 @font-face {
   font-family: "KBO-Dia-Gothic_bold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/KBO-Dia-Gothic_bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -10,58 +9,42 @@
   display: none;
 }
 
-/* All the container! */
 .container {
-  position: relative;
-  /* width: 100%; */
-  height: 60px;
-  padding: 0px 30px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   background-color: black;
+  padding: 0 20px;
+  height: auto;
+  gap: 10px;
   z-index: 10;
 }
 
-a {
-  text-decoration: none;
-}
-
-.pageName {
-  padding: 9px 0px;
-}
-
 .pageName a {
+  line-height: 50px;
   font-family: KBO-Dia-Gothic_bold;
-  position: relative;
-  color: white;
-  top: 20%;
-  font-size: 20px;
-  /* text-shadow: 3px 3px #c7cdd4; */
   color: orange;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .pageName:hover {
   transform: scale(1.1);
 }
 
-.groupLinks a {
-  font-family: KBO-Dia-Gothic_bold;
-  margin: 17px 20px;
-  position: relative;
-  top: 20%;
-  font-size: 20px;
-  color: white;
-}
-
-.groupLinks,
-.link,
-.christmas a {
+.groupLinks {
   display: flex;
   flex-direction: row;
-  align-content: center;
-  /* text-shadow: 3px 3px #c7cdd4; */
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.groupLinks a {
+  font-family: KBO-Dia-Gothic_bold;
+  font-size: 18px;
   color: white;
+  text-decoration: none;
 }
 
 .link:hover {
@@ -72,38 +55,17 @@ a {
   color: orange;
 }
 
-.christmas a {
-  transform: translateY(-3px);
-}
-
-.christmas a:hover span:first-child,
-.christmas a:hover span:nth-child(3),
-.christmas a:hover span:nth-child(5),
-.christmas a:hover span:nth-child(7),
-.christmas a:hover span:nth-child(9) {
-  color: green;
-}
-
-.christmas a:hover span:nth-child(2),
-.christmas a:hover span:nth-child(4),
-.christmas a:hover span:nth-child(6),
-.christmas a:hover span:nth-child(8) {
-  color: red;
-}
-
-/* Search Bar moves to center */
 .searchInput {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-/* height : search text height, text-align : moves to center */
 .searchInput input {
   height: 30px;
-  margin-right: 10px;
   border: 1px solid black;
   border-radius: 20px;
+  padding: 0 12px;
   text-align: center;
 }
 
@@ -112,5 +74,61 @@ a {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  margin-right: 10px;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* 모바일 전용 */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .groupLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    padding: 1rem 0;
+  }
+
+  .groupLinks.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .searchInput {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .searchInput input {
+    width: 160px;
+  }
+}
+.christmas a span{ 
+  display: inline-block;
+}
+
+.christmas a:hover span{
+    transform: scale(1.2);
+}
+
+.christmas a:hover span:nth-child(odd) {
+  color: green;
+}
+
+.christmas a:hover span:nth-child(even) {
+  color: red;
 }

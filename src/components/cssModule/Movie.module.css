@@ -21,12 +21,17 @@ p {
 
 a {
   color: white;
+  text-decoration-line: none;
 }
 
 .info {
   color: white;
   margin-top: -15px;
   font-family: Pretendard-Regular;
+}
+
+.info a {
+  text-decoration-line: none;
 }
 
 .genre {
